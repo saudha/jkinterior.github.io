@@ -1,0 +1,454 @@
+@import "variables", "mixins", "_reset", "_normalize";
+
+//nav section
+
+.nav_wrapper {
+  background-color: white;
+  padding-top: 10px;
+
+  @include max(992px) {
+    text-align: center;
+  }
+  span {
+    color: black;
+  }
+}
+.navbar-toggler:not(:disabled):not(.disabled) {
+  cursor: pointer;
+  color: black;
+  border: 1px solid black;
+}
+.change_navColor {
+  -webkit-box-shadow: 0px 3px 6px -1px rgba(0,0,0,0.75);
+  box-shadow: 0px 3px 6px -1px rgba(0,0,0,0.75);
+  background-color: #fff;
+  -webkit-animation: slideInDown 1s both;
+  animation: slideInDown 1s both;
+}
+.head_logo {
+  img {
+    width: 7%;
+
+    @include max(992px) {
+      width: 50px;
+    }
+  }
+}
+
+.main_nav {
+  .nav_right {
+    padding-top: 20px;
+
+    li {
+      a {
+        color: #731111 !important;
+        font-weight: 700;
+        margin-right: 25px;
+        font-family: $fr;
+        font-size: 20px;
+        font-weight: 800;
+        @include transition(0.3s linear);
+        letter-spacing: 2px;
+
+        &:hover {
+          color: black !important;
+          font-weight: bold;
+        }
+      }
+
+      button {
+        background-color: #731111;
+        color: white;
+        border: none;
+        border-radius: 40px;
+        padding: 10px 30px;
+        font-size: 12px;
+        font-family: sans-serif;
+        transition: 0.2s ease-in;
+        letter-spacing: 3px;
+
+        &:hover {
+          background: #dc5b33;
+        }
+
+        @include max(991px) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .active {
+      > a {
+        color: black !important;
+        font-weight: bold;
+
+        button {
+          background: black;
+
+          &:hover {
+            background: #dc5b33;
+          }
+        }
+      }
+    }
+
+    .nav_dropdown {
+      .nav_dropdown_menu {
+        border-radius: 0;
+        border: none;
+        padding: 15px;
+        box-shadow: 0 2px 3px rgba(40, 40, 40, 0.06);
+
+        a {
+          display: flex;
+
+          &:active {
+            background-color: transparent;
+          }
+
+          &:hover {
+            color: inherit;
+            background: inherit;
+          }
+
+          .img_drop_left {
+            font-size: 16px;
+            margin-right: 10px;
+            display: none;
+          }
+        }
+
+        .drop_left_a:hover .img_drop_left {
+          display: block;
+          background: none;
+        }
+      }
+    }
+  }
+}
+// slider starts here
+.sliders {
+  .car_img {
+    background: url("../img/back.jpg") center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    padding: 5% 0;
+    margin-bottom: 5%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .car_imgw {
+      display: flex;
+      margin-top: 50px;
+      @include max(575px){
+        margin-top: 30px;
+      }
+      h3 {
+        font-size: 55px;
+        color: #731111;
+        font-family: $fs;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+        @include max(575px){
+          font-size: 30px;
+        }
+      }
+      h5 {
+        font-size: 45px;
+        color: #731111;
+        font-family: $fm;
+        padding: 15px;
+        letter-spacing: 7px;
+        @include max(575px){
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .carousel-inner img {
+    width: 100%;
+    height: 100vh;
+  }
+  .carousel-control-next-icon {
+    border-radius: 13px;
+    display: inline-block;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .carousel-control-prev-icon {
+    display: inline-block;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .carousel-indicators li {
+    height: 8px !important;
+    border-radius: 13px;
+  }
+}
+// slider ends here
+
+// about starts here
+
+.about {
+  h3 {
+    font-size: 40px;
+    color: #731111;
+    margin-top: 10px;
+    font-family: $fs;
+  }
+  p {
+    font-size: 20px;
+    color: black;
+    margin-top: 30px;
+    font-family: $fr;
+    line-height: 1.5;
+    text-align: justify;
+    @include max(767px){
+      font-size: 16px;
+    }
+  }
+  img {
+    margin-top: 30px;
+    width: 100%;
+    height: 90vh;
+  }
+}
+// about ends here
+
+//services starts here
+.services {  
+  h3 {
+    font-size: 40px;
+    color: #731111;
+    margin-top: 25px;
+    font-family: $fs;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .serv1 {
+    margin-bottom: 30px;
+    img {
+      width: 100%;
+      height: 300px;
+      @include max(992px){
+        height:220px;
+      }
+    }
+    h4 {
+      font-size: 17px;
+      color: white;
+      font-family: $fr;
+      text-align: center;
+      background-color: #731111;
+      padding: 10px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      @include max(992px){
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.projects {
+  background-color: #ece8e8;
+  padding: 60px;
+  h3 {
+    font-size: 40px;
+    color: #731111;
+    margin-top: 10px;
+    font-family: $fs;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .carousel-indicators {
+    bottom: -60px;
+  }
+  .carousel-indicators li {
+    height: 8px !important;
+    border-radius: 50px;
+  }
+  .carousel-control-next-icon {
+    border-radius: 13px;
+    display: inline-block;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .carousel-control-prev-icon {
+    display: inline-block;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .img_car{
+    @include max(575px) {
+      height:200px!important;
+    }
+  }
+}
+
+/////projects ends here
+
+////contact starts here
+
+.contactus {
+  h3 {
+    font-size: 40px;
+    color: #731111;
+    margin-top: 40px;
+    font-family: $fs;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .contact_main {
+    margin-bottom: 5%;
+
+    .left_content {
+      @include max(767px) {
+        text-align: center;
+      }
+
+      .contact_logo {
+        width: 33%;
+        height: 107px;
+      }
+
+      h4 {
+        margin-bottom: 10%;
+        color: #731111;
+        font-family: $fb;
+        font-size: 14px;
+
+        span {
+          i {
+            font-size: 30px;
+            color: #731111;
+            margin-right: 10px;
+            @include max(767px) {
+              width: 6%;
+            }
+          }
+          a {
+            font-size: 30px;
+            color: #731111;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+          color: #731111;
+        }
+
+        .fa_mail {
+          margin-right: 8%;
+        }
+      }
+    }
+
+    .right_content {
+      label {
+        color: black;
+        font-family: $fr;
+        font-size: 20px;
+        margin-bottom: 10px;
+        transition: box-shadow 0.3s;
+      }
+
+      button {
+        color: white;
+        padding: 6px 60px;
+        box-shadow: 0px 5px 14px #5048484f;
+        background-color: #731111;
+    border-radius: 30px;
+    letter-spacing: 1px;
+        &:hover {
+          background: #dc5b33;
+        }
+      }
+    }
+  }
+}
+///contact ends here
+
+///b-t starts here
+.top_page {
+  a {
+    color: black;
+    float: right;
+    font-family: $fr;
+    font-size: 12px;
+    position: absolute;
+    right:2%;   
+    margin-top: -7%;
+    i{
+      color:#731111;
+      font-size: 50px;
+    }
+  }
+}
+///b-t ends here
+
+
+//Footer section
+
+.footer {
+  background-color: #731111;
+  padding: 20px;
+  @include max(575px) {
+    text-align: center;
+  }
+  .contact_wrapper {
+   @include max(767px) {
+      text-align: center;
+    }
+    p{
+        margin-bottom: 5px;
+        color: white;
+        font-family:$fl;
+        letter-spacing: 1px;
+        i {
+          font-size: 22px;
+          color: white;
+          margin-right: 10px;
+          @include max(992px) {
+            margin-right: 0;
+          }
+        }
+    }
+    a{
+      margin-bottom: 5px;
+      color: white;
+      font-family:$fl;
+      letter-spacing: 1px;
+    
+    }
+    h4 {
+      margin-bottom: 20px;
+      color: white;
+      font-family:$fr;
+      letter-spacing: 1px;
+    }
+    h3 {
+      margin-bottom: 20px;
+    }
+    h5 {
+      margin-top: 24px;
+      color: white;
+      margin-bottom: 20px;
+    }
+    .ftr_wrapper{
+      margin-bottom: 10px;
+    }
+  }
+  .cnt_icon {
+    display: flex;
+    i {
+      margin-right: 23px;
+      font-size: 22px;
+      color: #555555c4;
+    }
+  }
+}
